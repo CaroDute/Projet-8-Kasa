@@ -1,18 +1,18 @@
 .header {
   display: flex;
   justify-content: space-between;
-  margin: 0 100px 0 100px;
+  margin: 45px 100px 50px 100px;
 
   &__nav {
     display: flex;
     align-items: center;
     gap: 57px;
-    
+
     &-active {
       position: relative;
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -1px;
         left: 0;

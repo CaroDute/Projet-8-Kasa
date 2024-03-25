@@ -1,7 +1,8 @@
-const Logo = () => {
+// eslint-disable-next-line react/prop-types
+const Logo = ({src, alt}) => {
   return (
     <div>
-      <img src="./public/Kasa-logo.png" alt="Logo Kasa" />
+      <img src={src} alt={alt} />
     </div>
   );
 };
