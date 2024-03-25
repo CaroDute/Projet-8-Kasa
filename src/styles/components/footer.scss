@@ -1,0 +1,22 @@
+.footer {
+  background: black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 29px;
+  padding-top: 66px;
+  padding-bottom: 29px;
+
+  img {
+    filter: brightness(100);
+    height: 40px;
+
+  }
+
+  p {
+    color: white;
+    font-weight: 400;
+    padding-top: 10px;
+  }
+}
