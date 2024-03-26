@@ -2,7 +2,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 // eslint-disable-next-line react/prop-types
-const Layout = ({ children }) => {
+function Layout ({ children }) {
   return (
     <div className="container">
       <Header />
@@ -10,6 +10,6 @@ const Layout = ({ children }) => {
       <Footer />
     </div>
   );
-};
+}
 
 export default Layout;

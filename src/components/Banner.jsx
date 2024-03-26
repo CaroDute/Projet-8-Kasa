@@ -1,5 +1,5 @@
 // eslint-disable-next-line react/prop-types
-const Banner = ({ imageUrl }) => {
+function Banner ({ imageUrl, text }) {
   return (
     <div className="banner">
       <div
@@ -7,10 +7,10 @@ const Banner = ({ imageUrl }) => {
         style={{ backgroundImage: `url(${imageUrl})` }}
       ></div>
       <div className="banner__content">
-        <p>Chez vous, partout et ailleurs</p>
+        <p>{text}</p>
       </div>
     </div>
   );
-};
+}
 
 export default Banner;

@@ -1,10 +1,12 @@
 import Layout from "../src/components/Layout";
+import Banner from "../src/components/Banner";
 
-const About = () => {
-  return <Layout>
-    {''}
-    
-    </Layout>;
-};
+function About () {
+  return (
+    <Layout>
+      <Banner imageUrl="/Banner2.jpeg" />
+    </Layout>
+  );
+}
 
 export default About;
