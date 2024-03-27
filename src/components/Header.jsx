@@ -4,7 +4,7 @@ import Logo from "./Logo";
 function Header () {
   return (
   <div className="header">
-    <Logo src="./public/Kasa-logo.png" alt="Logo Kasa Orange" /> 
+    <Logo src="/public/Kasa-logo.png" alt="Logo Kasa Orange" /> 
     <ul className="header__nav">
       <NavLink to="/" className={(nav) => (nav.isActive ? "header__nav-active" : "")}>
         <li>Accueil</li>

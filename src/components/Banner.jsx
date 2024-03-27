@@ -1,5 +1,5 @@
 // eslint-disable-next-line react/prop-types
-function Banner ({ imageUrl, text }) {
+function Banner({ imageUrl, text }) {
   return (
     <div className="banner">
       <div
