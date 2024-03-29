@@ -9,27 +9,18 @@ function Collapse({ title, text }) {
   };
 
   return (
-    <div className="collapse">
-      {isCollapse ? (
-        <div className="collapse__title">
-          <h3>{title}</h3>
-          <img
-            src="/arrow-down.png"
-            alt="Flèche fermée collapse"
-            onClick={toggleCollapse}
-          />
-        </div>
-      ) : (
-        <div className="collapse__title">
-          <h3>{title}</h3>
-          <img
-            src="/arrow-up.png"
-            alt="Flèche ouverte collapse"
-            onClick={toggleCollapse}
-          />
-          <p>{text}</p>
-        </div>
-      )}
+    <div className={`collapse ${isCollapse ? "" : "open"}`}>
+      <div className="collapse__content-title">
+        <h3>{title}</h3>
+        <img
+          src="/arrow-up.png"
+          alt="Fleche collapse"
+          onClick={toggleCollapse}
+        />
+      </div>
+      <div className="collapse__content-text">
+        <p>{text}</p>
+      </div>
     </div>
   );
 }
