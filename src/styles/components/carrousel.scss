@@ -1,0 +1,36 @@
+.carrousel {
+  position: relative;
+  height: 415px;
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+  }
+
+  &__arrow {
+    position: absolute;
+    height: 79px;
+    bottom: 168px;
+  }
+
+  &__arrow-left {
+    left: 23px;
+  }
+
+  &__arrow-right {
+    right: 23px;
+  }
+
+  &__indicator {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    color: white;
+
+    p {
+      font-size: 18px;
+    }
+  }
+}
