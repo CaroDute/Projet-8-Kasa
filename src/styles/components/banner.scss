@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  margin-bottom: 38px;
 
   &__img {
     position: absolute;
@@ -20,5 +21,39 @@
     position: absolute;
     font-size: 48px;
     color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+      1px 1px 0 black;
+  }
+}
+
+@media (max-width: 930px) {
+  .banner {
+    &__content {
+      text-shadow: none;
+      margin-left: 16px;
+      font-size: 40px;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .banner {
+    height: 111px;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 22px;
+
+    &__img {
+      border-radius: 10px;
+    }
+
+    &__content {
+      font-size: 24px;
+      width: 225px;
+
+      p {
+        font-weight: 700;
+      }
+    }
   }
 }

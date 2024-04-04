@@ -1,13 +1,28 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import logements from "/public/logements.json";
 import Carrousel from "./Carrousel";
 import Collapse from "./Collapse";
 import Rating from "./Rating";
+import { useEffect } from "react";
 
 function FicheLogement() {
   const { id } = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const idLogement = logements.find((logement) => logement.id === id);
+
+    if (!idLogement) {
+      navigate("/error");
+    }
+  }, [id, navigate]);
 
   const logement = logements.find((logement) => logement.id === id);
+
+  // Si le logement n'est pas défini, il n'essaye pas d'accéder à ses propriétés
+  if (!logement) {
+    return null;
+  }
 
   return (
     <div>
@@ -15,7 +30,7 @@ function FicheLogement() {
         <Carrousel />
       </div>
       <div className="logement">
-        <div>
+        <div className="logement__content">
           <h2 className="logement__title">{logement.title}</h2>
           <p className="logement__location">{logement.location}</p>
           <ul className="logement__tags">
@@ -26,10 +41,14 @@ function FicheLogement() {
         </div>
         <div className="logement__host">
           <div className="logement__host-info">
-            <p>{logement.host.name}</p>
+            <p>
+              {logement.host.name.split(" ")[0]}
+              <br />
+              {logement.host.name.split(" ")[1]}
+            </p>
             <img src={logement.host.picture} alt="Photo du propriétaire" />
           </div>
-          <div className="logement__rating">
+          <div>
             <Rating rating={logement.rating} />
           </div>
         </div>

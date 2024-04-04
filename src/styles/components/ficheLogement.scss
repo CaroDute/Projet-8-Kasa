@@ -1,11 +1,17 @@
 .logement {
   display: flex;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
+
+  &__content {
+    margin-bottom: 16px;
+  }
 
   &__title {
     font-size: 36px;
     color: $main-color;
-    margin-top: 30px;
+    font-weight: 400;
   }
 
   &__location {
@@ -17,7 +23,6 @@
     list-style: none;
     display: flex;
     gap: 10px;
-    margin-bottom: 24px;
 
     li {
       border: solid 1px $main-color;
@@ -44,6 +49,32 @@
     &-info {
       display: flex;
       align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 15px;
+
+      img {
+        width: 64px;
+        height: 64px;
+        border-radius: 32px;
+        margin-left: 10px;
+      }
+
+      p {
+        text-align: right;
+        color: $main-color;
+        font-size: 18;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__rating {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+
+    img {
+      height: 24px;
     }
   }
 }

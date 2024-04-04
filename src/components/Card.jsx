@@ -1,11 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import logements from "/public/logements.json";
 
+// eslint-disable-next-line react/prop-types
 function Card() {
   const navigate = useNavigate();
 
   const handleClick = (id) => {
-    navigate(`/Logement/${id}`);
+    const idLogement = logements.some((logement) => logement.id === id);
+    if (!idLogement) {
+      navigate("/error");
+    } else {
+      navigate(`/Logement/${id}`);
+    }
   };
 
   const cards = logements.map((logement, index) => (

@@ -7,7 +7,6 @@
   gap: 29px;
   padding-top: 66px;
   padding-bottom: 29px;
-  margin-top: 50px;
 
   img {
     height: 40px;
@@ -17,5 +16,20 @@
     color: white;
     font-weight: 400;
     padding-top: 10px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .footer {
+    padding-bottom: 58px;
+    gap: 0;
+
+    &__p {
+      width: 133px;
+      font-size: 13px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+    }
   }
 }

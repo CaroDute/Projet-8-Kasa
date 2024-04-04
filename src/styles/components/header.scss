@@ -33,3 +33,30 @@
     }
   }
 }
+
+@media (max-width: 767.98px) {
+  .header {
+    margin: 20px 20px 27px 20px;
+
+    &__nav {
+      gap: 26px;
+    }
+
+    img {
+      width: 145px;
+    }
+
+    li {
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .header {
+    &__nav {
+      gap: 10px;
+    }
+  }
+}
