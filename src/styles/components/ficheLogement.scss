@@ -23,6 +23,7 @@
     list-style: none;
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 
     li {
       border: solid 1px $main-color;
@@ -75,6 +76,68 @@
 
     img {
       height: 24px;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .logement {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    &__location {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    &__tags {
+      li {
+        width: 84px;
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    &__host {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+
+      &-info {
+        img {
+          height: 32px;
+          width: 32px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+
+    &__rating {
+      gap: 4px;
+
+      img {
+        height: 13px;
+      }
+    }
+
+    &__collapse {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      div {
+        margin: 0;
+      }
     }
   }
 }

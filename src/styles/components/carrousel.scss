@@ -35,3 +35,19 @@
     }
   }
 }
+
+@media (max-width: 767.98px) {
+  .carrousel {
+    height: 255px;
+    margin-bottom: 15px;
+  
+  &__arrow {
+    height: 20px;
+    bottom: 117px;
+  }
+
+  &__indicator {
+    visibility: hidden;
+  }
+}
+}

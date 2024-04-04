@@ -26,3 +26,27 @@
     color: black;
   }
 }
+
+@media (max-width: 767.98px) {
+  .error {
+    &__title {
+      font-size: 96px;
+      margin-top: 86px;
+      margin-bottom: 113px;
+    }
+
+    &__text {
+      font-size: 18px;
+      text-align: center;
+      width: 260px;
+      margin-bottom: 113px;
+      padding-top: 0;
+    }
+
+    &__return {
+      font-size: 14px;
+      margin-top: 0;
+      margin-bottom: 86px;
+    }
+  }
+}
