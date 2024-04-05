@@ -54,10 +54,10 @@ function FicheLogement() {
         </div>
       </div>
       <div className="logement__collapse">
-        <div>
+        <div className="logement__collapse-size">
           <Collapse title="Description" text={logement.description} />
         </div>
-        <div>
+        <div className="logement__collapse-size">
           <Collapse title="Equipement" text={logement.equipments.join(", ")} />
         </div>
       </div>
