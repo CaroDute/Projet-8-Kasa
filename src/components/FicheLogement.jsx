@@ -4,6 +4,7 @@ import Carrousel from "./Carrousel";
 import Collapse from "./Collapse";
 import Rating from "./Rating";
 import { useEffect, useState } from "react";
+import Tags from "./Tags";
 
 function FicheLogement() {
   const { id } = useParams();
@@ -34,8 +35,8 @@ function FicheLogement() {
           <h2 className="logement__title">{logement.title}</h2>
           <p className="logement__location">{logement.location}</p>
           <ul className="logement__tags">
-            {logement.tags.map((tag, id) => (
-              <li key={id}>{tag}</li>
+            {logement.tags.map((tag, index) => (
+              <Tags text={tag} key={index} />
             ))}
           </ul>
         </div>
