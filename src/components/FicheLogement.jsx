@@ -3,21 +3,21 @@ import logements from "/public/logements.json";
 import Carrousel from "./Carrousel";
 import Collapse from "./Collapse";
 import Rating from "./Rating";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function FicheLogement() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [logement, setLogement] = useState();
 
   useEffect(() => {
     const idLogement = logements.find((logement) => logement.id === id);
 
     if (!idLogement) {
-      navigate("/error");
+      return navigate("/error");
     }
+    setLogement(idLogement);
   }, [id, navigate]);
-
-  const logement = logements.find((logement) => logement.id === id);
 
   // Si le logement n'est pas défini, il n'essaye pas d'accéder à ses propriétés
   if (!logement) {
