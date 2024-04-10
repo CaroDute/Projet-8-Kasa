@@ -27,7 +27,7 @@ function FicheLogement() {
   return (
     <div>
       <div className="carrousel">
-        <Carrousel />
+        <Carrousel image={logement.pictures} id={logement} />
       </div>
       <div className="logement">
         <div className="logement__content">

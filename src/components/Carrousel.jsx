@@ -1,16 +1,12 @@
-import logements from "/public/logements.json";
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
-function Carrousel() {
-  const { id } = useParams();
-
+// eslint-disable-next-line react/prop-types
+function Carrousel({ image, id }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const logement = logements.find((logement) => logement.id === id);
-
   useEffect(() => {
-    if (logement) {
+    if (id) {
       setCurrentIndex(0);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -18,19 +14,19 @@ function Carrousel() {
 
   const goToPrevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? logement.pictures.length - 1 : prevIndex - 1
+      prevIndex === 0 ? image.length - 1 : prevIndex - 1
     );
   };
 
   const goToNextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === logement.pictures.length - 1 ? 0 : prevIndex + 1
+      prevIndex === image.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   return (
     <div className="carrousel">
-      {logement && logement.pictures.length > 1 && (
+      {id && image.length > 1 && (
         <img
           src="/public/arrow-left.png"
           alt="Fleche navigation gauche"
@@ -38,15 +34,15 @@ function Carrousel() {
           className="carrousel__arrow carrousel__arrow-left "
         />
       )}
-      {logement && (
+      {id && (
         <img
-          src={logement.pictures[currentIndex]}
+          src={image[currentIndex]}
           alt={`Image ${currentIndex + 1}`}
           className="carrousel__image"
         />
       )}
 
-      {logement && logement.pictures.length > 1 && (
+      {id && image.length > 1 && (
         <img
           src="/public/arrow-right.png"
           alt="Fleche navigation droite"
@@ -54,10 +50,10 @@ function Carrousel() {
           className="carrousel__arrow carrousel__arrow-right "
         />
       )}
-      {logement && logement.pictures.length > 1 && (
+      {id && image.length > 1 && (
         <div className="carrousel__indicator">
           <p>
-            {currentIndex + 1}/{logement.pictures.length}
+            {currentIndex + 1}/{image.length}
           </p>
         </div>
       )}
