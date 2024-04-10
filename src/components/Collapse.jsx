@@ -19,7 +19,7 @@ function Collapse({ title, text }) {
         />
       </div>
       <div className="collapse__content-text">
-        <p>{text}</p>
+        {typeof text === "string" ? <p>{text}</p> : text}
       </div>
     </div>
   );

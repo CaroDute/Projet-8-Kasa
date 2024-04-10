@@ -59,7 +59,16 @@ function FicheLogement() {
           <Collapse title="Description" text={logement.description} />
         </div>
         <div className="logement__collapse-size">
-          <Collapse title="Equipement" text={logement.equipments.join(", ")} />
+          <Collapse
+            title="Equipement"
+            text={
+              <ul>
+                {logement.equipments.map((equipment, index) => (
+                  <li key={index}>{equipment}</li>
+                ))}
+              </ul>
+            }
+          />
         </div>
       </div>
     </div>
